@@ -1,17 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>Edit the todo !</h2>
-    @extends('layouts.app')
+    <h2>Edit a todo !</h2>
 
-@section('content')
-    <h2>Make a todo !</h2>
-
-    <form action="{!!route('todos.update')!!}" method="post">
+    <form action="{!!route('todos.update',['todo'=>$todo->id])!!}" method="post">
         @csrf
+        @method('put')
 
         <label for="title">Title</label>
-        <input id="title" name="title" value="{{old('title')}}" minlength="5" maxlength="100" placeholder="title" title="pass a title for your todo" required/>
+        <input id="title" name="title" value="{{old('title')}}" minlength="0" maxlength="100" placeholder="title" title="pass a title for your todo" required/>
         @error('title')
             <div class="error-input">
                 <h3>{{$message}}</h3>
@@ -38,9 +35,20 @@
             </div>
         @enderror
     
-        <input type="submit" value="Make !"/>
+        <label title="the todo had been done ?">Done:</label>
+        <label for="done_yes">Yes</label>
+        <input id="done_yes" name="done" type="radio" value="1" @checked(session('_old_input.done') ? session('_old_input.done')==="1" : $todo->done_at !== null)/>
+        <label for="done_no">No</label>
+        <input id="done_no" name="done" type="radio" value="0" @checked(session('_old_input.done') ? session('_old_input.done')==="0" : $todo->done_at === null)/>
+        @error('done')
+            <div class="error-input">
+                <h3>{{$message}}</h3>
+            </div>
+        @enderror
+
+
+        <input type="submit" value="Edit !"/>
 
     </form>
 
-@endsection
 @endsection
