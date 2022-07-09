@@ -65,7 +65,7 @@ class TodoController extends Controller
     {
         //
         // return view('todo.edit',['todo'=>Todo::findOrFail($id)]);
-        return view('todo.edit',['todo'=>$todo]);
+        return view('todo.edit',['todo'=>$todo,'categories' => Category::all(['id','name'])]);
     }
 
     /**
@@ -75,7 +75,7 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TodoUpdateRequest $request, $id)
+    public function update(TodoUpdateRequest $request,Todo $todo)
     {
         //
     }
