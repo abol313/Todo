@@ -13,7 +13,7 @@ class TodoUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -27,8 +27,8 @@ class TodoUpdateRequest extends FormRequest
             //
             'title' => 'required|string|between:5,100|',
             'description' => 'nullable|string|max:65535',
-            'category' => 'nullable|integer|exists:categories',
-            'done_at' => 'required|boolean',
+            'category' => 'nullable|integer|exists:categories,id',
+            'done' => 'required|boolean',
         ];
 
     }
