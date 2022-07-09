@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TodoStoreRequest;
 use App\Http\Requests\TodoUpdateRequest;
+use App\Models\Category;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,7 @@ class TodoController extends Controller
     public function create()
     {
         //
-        return view('todo.create');
+        return view('todo.create',['categories' => Category::all(['id','name'])]);
     }
 
     /**
