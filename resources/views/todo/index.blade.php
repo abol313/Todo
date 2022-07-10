@@ -14,7 +14,7 @@
             
         @foreach($categories as $category)
             <label for="todo-filter-category-{{$category->name}}">{{$category->name}}</label>
-            <input id="todo-filter-category-{{$category->name}}" name="categories[]" value="{{$category->name}}" type="checkbox" title="filter todos with category {{$category->name}}" /> 
+            <input id="todo-filter-category-{{$category->name}}" name="filter[categories][]" value="{{$category->id}}" type="checkbox" title="filter todos with category {{$category->name}}" /> 
         @endforeach
 
         <input type="submit" value="filter"/>
