@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2>Edit a todo !</h2>
+    <h2>Edit the todo !</h2>
 
-    <form action="{!!route('todos.update',['todo'=>$todo->id])!!}" method="post">
+    <form action="{!!route('todos.update',['todo'=>$todo])!!}" method="post">
         @csrf
         @method('put')
 
@@ -47,8 +47,16 @@
         @enderror
 
 
+
         <input type="submit" value="Edit !"/>
 
     </form>
+    
+    <h2>Delete the todo !</h2>
 
+    <form action="{!!route('todos.destroy',['todo'=>$todo])!!}" method="post">
+        @csrf
+        @method('delete')
+        <input type="submit" value="Delete !"/>
+    </form>
 @endsection
