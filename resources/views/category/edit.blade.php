@@ -21,7 +21,7 @@
     
     <h2>Delete the category !</h2>
 
-    <form action="{!!route('categories.destroy',['categories'=>$categories])!!}" method="post">
+    <form action="{!!route('categories.destroy',['category'=>$category])!!}" method="post">
         @csrf
         @method('delete')
         <input type="submit" value="Delete !"/>
