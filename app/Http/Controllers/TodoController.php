@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\TodoStoreRequest;
-use App\Http\Requests\TodoUpdateRequest;
+use App\Http\Requests\StoreTodoRequest;
+use App\Http\Requests\UpdateTodoRequest;
 use App\Models\Category;
 use App\Models\Todo;
 use Illuminate\Http\Request;
@@ -38,7 +38,7 @@ class TodoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(TodoStoreRequest $request)
+    public function store(StoreTodoRequest $request)
     {
         //
         Todo::create([
@@ -82,7 +82,7 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TodoUpdateRequest $request,Todo $todo)
+    public function update(UpdateTodoRequest $request,Todo $todo)
     {
         //
         $todo->title = $request->get('title');
