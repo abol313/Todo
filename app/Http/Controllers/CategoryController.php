@@ -16,6 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         //
+        return view('category.index',['categories'=>Category::all(['name'])]);
     }
 
     /**
