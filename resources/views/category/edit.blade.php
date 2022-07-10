@@ -8,7 +8,7 @@
         @method('put')
 
         <label for="name">Name</label>
-        <input id="name" name="name" value="{{old('name')}}" minlength="3" maxlength="14" placeholder="name" title="pass a name for your category" required/>
+        <input id="name" name="name" value="{{old('name') ?? $category->name}}" minlength="3" maxlength="14" placeholder="name" title="pass a name for your category" required/>
         @error('name')
             <div class="error-input">
                 <h3>{{$message}}</h3>
