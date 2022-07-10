@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.todo')
 
 @section('content')
     @forelse($todos as $todo)

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.todo')
 
 @section('content')
     <x-todo.item :todo="$todo"/>
