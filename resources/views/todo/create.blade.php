@@ -14,7 +14,7 @@
         @enderror
 
         <label for="description">Description</label>
-        <textarea id="description" name="description" rows="10" maxlength="5" placeholder="description" title="get description for more details...">{{@old('description')}}</textarea>
+        <textarea id="description" name="description" rows="10" maxlength="65535" placeholder="description" title="get description for more details...">{{@old('description')}}</textarea>
         @error('description')
             <div class="error-input">
                 <h3>{{$message}}</h3>
