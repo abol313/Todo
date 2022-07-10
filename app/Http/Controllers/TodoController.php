@@ -84,6 +84,7 @@ class TodoController extends Controller
         $todo->done_at = match($request->get('done')){"0"=>null,"1"=>date('Y-m-d H:i:s')};
         $todo->save();
 
+        return back();
     }
 
     /**
