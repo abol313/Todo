@@ -1,8 +1,8 @@
 @extends('layouts.category')
 
 @section('content')
-    @forelse($categories as $categories)
-        <x-categories.item :categories="$categories"/>
+    @forelse($categories as $category)
+        <x-category.item :category="$category"/>
     @empty
         <h3>No category!</h3>
     @endforelse
