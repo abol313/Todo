@@ -25,7 +25,7 @@ class FilterIndexTodoRequest extends FormRequest
     {
         return [
             //
-            'categories' => 'required|array',
+            'categories' => 'nullable|array',
             'categories.*' => 'required_with:categories|string|exists:categories,name'
         ];
     }
