@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Category Collection')
+@section('title','Todo Collection')
 
 
 @section('header')
