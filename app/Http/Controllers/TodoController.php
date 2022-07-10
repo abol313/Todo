@@ -78,6 +78,12 @@ class TodoController extends Controller
     public function update(TodoUpdateRequest $request,Todo $todo)
     {
         //
+        $todo->title = $request->get('title');
+        if($request->exists('description'))$todo->description = $request->get('description');
+        if($request->exists('category'))$todo->category = $request->get('category');
+        $todo->done_at = match($request->get('done')){"0"=>null,"1"=>date('Y-m-d H:i:s')};
+        $todo->save();
+
     }
 
     /**
