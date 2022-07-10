@@ -21,7 +21,7 @@ return new class extends Migration
 
         if(Schema::hasTable('todos'))
             Schema::table('todos',function(Blueprint $table){
-                $table->foreign('category')->references('id')->on('categories');
+                $table->foreign('category')->references('id')->on('categories')->onDelete('cascade');
             });
         
     }
