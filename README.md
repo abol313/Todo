@@ -9,7 +9,9 @@ Thanks ALLAH
 You can handle your own todos & categories
 
 This supports CRUD (Create, Read, Update, Delete)
-Two resource now there are 
+Two resources now there are :
+    1.Todo
+    2.Category
 
 Main database : mysql
 Main language : php
