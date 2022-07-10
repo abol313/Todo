@@ -41,6 +41,13 @@ class TodoController extends Controller
     public function store(TodoStoreRequest $request)
     {
         //
+        Todo::create([
+            'title' => $request->get('title'),
+            'description' => $request->get('description'),
+            'category' => $request->get('category'),
+        ]);
+
+        return back();
     }
 
     /**
