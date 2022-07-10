@@ -98,6 +98,6 @@ class CategoryController extends Controller
         //
         $category->delete();
 
-        return redirect()->route('catgories.index');
+        return redirect()->route('categories.index');
     }
 }
