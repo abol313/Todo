@@ -39,6 +39,11 @@ class CategoryController extends Controller
     public function store(StoreCategoryRequest $request)
     {
         //
+        Category::create([
+            'name' => $request->get('name')
+        ]);
+
+        return back();
     }
 
     /**
