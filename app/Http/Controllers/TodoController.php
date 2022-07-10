@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FilterIndexTodoRequest;
 use App\Http\Requests\StoreTodoRequest;
 use App\Http\Requests\UpdateTodoRequest;
 use App\Models\Category;
@@ -18,7 +19,7 @@ class TodoController extends Controller
     public function index()
     {
         //
-        return view('todo.index',['todos'=>Todo::all()]);
+        return view('todo.index',['todos'=>Todo::all(),'categories'=>Category::all()]);
     }
 
     /**
@@ -106,5 +107,11 @@ class TodoController extends Controller
         $todo->delete();
 
         return redirect()->route('todos.index');
+    }
+
+
+    public function filterIndex(FilterIndexTodoRequest $request){
+        $request->session()->put('todo_filter_categories',$request->get('categories'));
+        return back();
     }
 }
