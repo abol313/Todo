@@ -15,13 +15,13 @@
     </li>
 
     <li>
-        <a href="{{route('todos.index')}}">
+        <a href="{{route('categories.index')}}">
             <h2>List</h2>
         </a>
     </li>
 
     <li>
-        <a href="{{route('todos.create')}}">
+        <a href="{{route('categories.create')}}">
             <h2>Make</h2>
         </a>
     </li>
