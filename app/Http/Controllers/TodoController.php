@@ -19,6 +19,9 @@ class TodoController extends Controller
     public function index()
     {
         //
+        if($filterCategories = session('todo.filter.categories'))
+            return view('todo.index',['todos'=>Todo::whereIn('category',$filterCategories)->get(),'categories'=>Category::all()]);
+        
         return view('todo.index',['todos'=>Todo::all(),'categories'=>Category::all()]);
     }
 
@@ -111,7 +114,7 @@ class TodoController extends Controller
 
 
     public function filterIndex(FilterIndexTodoRequest $request){
-        $request->session()->put('todo_filter_categories',$request->get('categories'));
+        $request->session()->put('todo.filter.categories',$request->input('filter.categories'));
         return back();
     }
 }
