@@ -12,16 +12,27 @@
 <body>
     <div class="header-nav">
         <header>
-            <h1>Welcome to Todo Collection !</h1>
+            @section('header')
+                <h1>Welcome !</h1>
+            @show
         </header>
         <nav>
             <ul>
-                <li><h2>List</h2></li>
-                <li><h2>Make</h2></li>
+                @section('navbar')
+                    <li>
+                        <h2>item</h2>
+                    </li>
+                @show
             </ul>    
         </nav>
     </div>
 
+    <aside>
+        @section('sidebar')
+            <h2>Why here ?</h2>
+        @show
+    </aside>
+    
     <main>
         @section('content')
             <h3>Welcome ;)}</h3>
