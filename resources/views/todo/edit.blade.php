@@ -25,6 +25,8 @@
         
         <label for="category">Category</label>
         <select id="category" name="category" placeholder="category" title="select your category">
+            <option value="" @selected(session('_old_input.category') === null)>- No category -</option>
+
             @foreach($categories as $category)
                 <option value="{{$category->id}}" @selected(session('_old_input.category') == $category->id || $todo->category == $category->id)>{{$category->name}}</option>
             @endforeach
