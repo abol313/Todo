@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('styles')
+    @vite('resources/css/category.css')
+@endpush
+
 @section('title','Category Collection')
 
 
