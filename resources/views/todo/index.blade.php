@@ -17,6 +17,7 @@
             <input id="todo-filter-category-{{$category->name}}" name="filter[categories][]" value="{{$category->id}}" type="checkbox" title="filter todos with category {{$category->name}}" @checked(in_array($category->id,session('todo.filter.categories',[])))/> 
         @endforeach
 
+        <input type="reset" value="Clear"/>
         <input type="submit" value="filter"/>
 
     </form>
