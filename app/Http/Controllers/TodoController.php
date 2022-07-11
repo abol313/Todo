@@ -18,10 +18,16 @@ class TodoController extends Controller
      */
     public function index()
     {
-        //
-        if($filterCategories = session('todo.filter.categories'))
-            return view('todo.index',['todos'=>Todo::whereIn('category',$filterCategories)->get(),'categories'=>Category::all()]);
         
+        if($filterCategories = session('todo.filter.categories')){
+            $filterCategoriesNoNulls = array_filter($filterCategories,fn($v)=>$v!==null);
+            $todoQuery = Todo::query();
+            if(!empty($filterCategoriesNoNulls))$todoQuery = $todoQuery->whereIn('category',$filterCategoriesNoNulls);
+            if(in_array(null, $filterCategories, true))$todoQuery = $todoQuery->orWhereNull('category');
+
+            return view('todo.index',['todos'=>$todoQuery->get(),'categories'=>Category::all()]);
+        }
+
         return view('todo.index',['todos'=>Todo::all(),'categories'=>Category::all()]);
     }
 
