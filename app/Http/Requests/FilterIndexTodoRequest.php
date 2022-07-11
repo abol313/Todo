@@ -27,7 +27,7 @@ class FilterIndexTodoRequest extends FormRequest
             //
             'filter' => 'nullable|array',
             'filter.categories' => 'nullable|array',
-            'filter.categories.*' => 'required_with:categories|integer|exists:categories,id'
+            'filter.categories.*' => 'nullable|integer|exists:categories,id'
         ];
     }
 }
