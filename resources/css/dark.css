@@ -1,0 +1,15 @@
+:root{
+    --color-bg:var(--color-dark-yellow);
+
+    --color-text:var(--color-light-yellow);
+    --color-text-bg:var(--color-dark-yellow);
+
+    --color-ok-text:var(--color-light-green);
+    --color-ok-bg:var(--color-dark-green);
+
+    --color-warning-text:var(--color-light-yellow);
+    --color-warning-bg:var(--color-dark-yellow);
+    
+    --color-danger-text:var(--color-light-red);
+    --color-danger-bg:var(--color-dark-red);
+}
