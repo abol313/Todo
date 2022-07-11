@@ -14,10 +14,7 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::redirect('/','/todos');
 Route::get('/todos/filter',[TodoController::class,'filterIndex'])->name('todos.filter');
 Route::resource('todos',TodoController::class);
 Route::resource('categories',CategoryController::class);
