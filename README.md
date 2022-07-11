@@ -8,6 +8,8 @@ Thanks ALLAH
 
 You can handle your own todos & categories
 
+You can filter the list of todos base of their categories
+
 This supports CRUD (Create, Read, Update, Delete)
 Two resources now there are :
     1.Todo
