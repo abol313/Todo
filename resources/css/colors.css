@@ -1,0 +1,19 @@
+/* light colors */
+:root {
+    --color-light-blue:#2196f3;
+    --color-light-red:#ff5722;
+    --color-light-grey:#96a4ae;
+    --color-light-cyan:#84ffff;
+    --color-light-green:#64dd17;
+    --color-light-yellow:#ffcb3b;
+}
+
+/* dark colors */
+:root {
+    --color-dark-blue:#0d47a1;
+    --color-dark-red:#bf360c;
+    --color-dark-grey:#1c313a;
+    --color-dark-cyan:#006064;
+    --color-dark-green:#003d00;
+    --color-dark-yellow:#6d5d00;
+}
