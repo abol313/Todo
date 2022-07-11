@@ -14,7 +14,7 @@
 @section('navbar')
     <li>
         <a href="{{route('categories.index')}}">
-            <h2>Categories</h2>
+            <h2>Go To Categories</h2>
         </a>
     </li>
 
