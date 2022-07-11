@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('styles')
-    @vite('resources/css/category.css')
+    @vite('resources/css/todo.css')
 @endpush
 
 @section('title','Todo Collection')
