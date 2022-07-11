@@ -14,7 +14,7 @@
 @section('navbar')
     <li>
         <a href="{{route('todos.index')}}">
-            <h2>Todos</h2>
+            <h2>Go To Todos</h2>
         </a>
     </li>
 
