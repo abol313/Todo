@@ -1,19 +1,41 @@
 /* light colors */
 :root {
     --color-light-blue:#2196f3;
+    --color-light-blue:33, 150, 243;
+
     --color-light-red:#ff5722;
+    --color-light-red:255, 87, 34;
+
     --color-light-grey:#96a4ae;
+    --color-light-grey:150, 164, 174;
+
     --color-light-cyan:#84ffff;
+    --color-light-cyan:132, 255, 255;
+
     --color-light-green:#64dd17;
+    --color-light-green:100, 221, 23;
+
     --color-light-yellow:#ffcb3b;
+    --color-light-yellow:255, 203, 59;
 }
 
 /* dark colors */
 :root {
     --color-dark-blue:#0d47a1;
+    --color-dark-blue:13, 71, 161;
+
     --color-dark-red:#bf360c;
+    --color-dark-red:191, 54, 12;
+    
     --color-dark-grey:#1c313a;
+    --color-dark-grey:28, 49, 58;
+    
     --color-dark-cyan:#006064;
+    --color-dark-cyan:0, 96, 100;
+    
     --color-dark-green:#003d00;
-    --color-dark-yellow:#6d5d00;
+    --color-dark-green:0, 61, 0;
+    
+    --color-dark-yellow:#5e5000;
+    --color-dark-yellow:94, 80, 0;
 }
