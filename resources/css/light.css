@@ -1,8 +1,8 @@
 :root{
-    --color-bg:var(--color-light-yellow);
+    --color-bg:var(--color-light-green);
 
-    --color-text:var(--color-dark-yellow);
-    --color-text-bg:var(--color-light-yellow);
+    --color-text:var(--color-dark-green);
+    --color-text-bg:var(--color-light-green);
 
     --color-ok-text:var(--color-dark-green);
     --color-ok-bg:var(--color-light-green);
