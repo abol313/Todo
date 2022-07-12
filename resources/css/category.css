@@ -36,6 +36,12 @@ main {
     flex-direction:column;
 }
 
+:is(.category-edit,.category-create) main form * {
+    max-width:100%;
+    box-sizing: border-box;
+}
+
+
 :is(.category-create,.category-edit) main form label{
     padding:10px;
     font-size:1.3em;
