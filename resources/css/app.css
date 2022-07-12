@@ -5,6 +5,7 @@ html{
 
 * {
     font-family:'Quicksand',cursive;
+    user-select:none;
 }
 
 body {
