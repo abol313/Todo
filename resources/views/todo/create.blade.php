@@ -1,5 +1,7 @@
 @extends('layouts.todo')
 
+@section('class','todo-create')
+
 @section('content')
     <h2>Make a todo !</h2>
     <form action="{!!route('todos.store')!!}" method="post">
