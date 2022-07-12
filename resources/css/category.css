@@ -1,0 +1,69 @@
+:is(.category-index,.category-create,.category-edit,.category) aside {
+    display:none;
+}
+
+:is(.category-index,.category-show,.category-create,.category-edit) main {
+    flex-grow: 1;
+    
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+:is(.category-create,.category-edit) main {
+    overflow: visible;
+    max-height: none;
+}
+
+:is(.category-index,.category-show) main .category-item {
+    box-sizing: border-box;
+    border:2px solid rgb(var(--color-text));
+    padding:20px;
+    border-radius:5px;
+    font-size:1.3em;
+    word-break: keep-all;
+    max-width:calc(100vw - 0px);
+}
+
+:is(.category-create,.category-edit) main form {
+    box-sizing: border-box;
+    width:400px;
+    max-width:100%;
+    align-self: center;
+    display:flex;
+    flex-direction:column;
+}
+
+:is(.category-create,.category-edit) main form label{
+    padding:10px;
+    font-size:1.3em;
+    margin-top:10px;
+    text-align:left;
+}
+
+:is(.category-create,.category-edit) main form :is(input,textarea,select){
+    /* border-radius:5px; */
+    box-sizing: border-box;
+    width:100%;
+    padding:10px;
+    font-size:1.1em;
+    background-color:rgba(var(--color-text),.2);
+    border:none;
+    border-top:1px solid rgb(var(--color-text));
+    color:rgb(var(--color-text));
+    resize:none;
+    outline:none;
+    caret-color: rgb(var(--color-text));
+}
+
+:is(.category-create,.category-edit) main form :is(input,textarea)::placeholder{
+    color:rgba(var(--color-text),.6);
+}
+
+
+:is(.category-create,.category-edit) main form :is(input[type="submit"],input[type="reset"]){
+    background-color: rgb(var(--color-text));
+    color: rgb(var(--color-text-bg));
+    border-radius:5px;
+    margin-top:10px;
+}
