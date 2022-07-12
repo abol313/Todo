@@ -3,6 +3,17 @@ aside {
     width:200px;
 }
 
+main {
+    flex-grow:10;
+    width:400px;
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-height:800px;
+    overflow: auto;
+}
+
 aside .filter {
     background-color:rgba(var(--color-text),.2);
     border-radius:5px;
@@ -70,4 +81,80 @@ aside .filter .categories form :is(input[type="submit"],input[type="reset"]){
     border-radius:5px;
     font-size:1.5em;
     cursor:pointer;
+}
+
+main .todo-item {
+    box-sizing: border-box;
+    border:2px solid rgb(var(--color-text));
+    padding:20px;
+    border-radius:5px;
+    font-size:1.3em;
+    word-break: keep-all;
+    max-width:calc(100vw - 0px);
+}
+
+.todo-edit main form {
+    display:flex;
+    flex-direction:column;
+}
+
+.todo-edit main form label{
+    padding:10px;
+    font-size:1.3em;
+    margin-top:10px;
+    text-align:left;
+}
+
+.todo-edit main form :is(input,textarea,select){
+    /* border-radius:5px; */
+
+    padding:10px;
+    font-size:1.1em;
+    background-color:rgba(var(--color-text),.2);
+    border:none;
+    border-top:1px solid rgb(var(--color-text));
+    color:rgb(var(--color-text));
+    resize:none;
+    outline:none;
+    caret-color: rgb(var(--color-text));
+}
+
+.todo-edit main form select option{
+    appearance: none;
+    background-color: rgb(var(--color-text-bg));
+    color: rgb(var(--color-text));
+    outline: none;
+}
+
+.todo-edit main form .done {
+    
+    display:flex;
+    align-items:center;
+    border-top:1px solid rgb(var(--color-text));
+}
+.todo-edit main form .done *{
+    margin:0;
+}
+
+.todo-edit main form input[type="radio"]{
+    appearance:none;
+    width:20px;
+    height:20px;
+    border-radius:100px;
+    border:2px solid rgb(var(--color-text));
+    background-color: rgb(var(--color-text-bg));
+}
+
+.todo-edit main form input[type="radio"]:checked{
+    background-color: rgb(var(--color-text));
+}
+
+.todo-edit main form :is(input,textarea)::placeholder{
+    color:rgba(var(--color-text),.6);
+}
+
+.todo-edit main form :is(input[type="submit"],input[type="reset"]){
+    background-color: rgb(var(--color-text));
+    color: rgb(var(--color-text-bg));
+    border-radius:5px;
 }
