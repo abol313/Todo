@@ -10,8 +10,11 @@ main {
     display:flex;
     flex-direction:column;
     gap:10px;
-    max-height:800px;
-    overflow: auto;
+}
+
+:is(.todo-create,.todo-edit) main {
+    overflow: visible;
+    max-height: none;
 }
 
 aside .filter {
@@ -168,6 +171,6 @@ main .todo-item {
     border-radius:5px;
 }
 
-:is(.todo-edit,.todo-create) aside{
+:is(.todo-edit,.todo-create,.todo-show) aside{
     display:none;
 }
