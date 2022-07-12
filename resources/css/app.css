@@ -79,9 +79,9 @@ footer {
     width:100%;
 
     background-color:rgb(var(--color-bg),.7);
-    box-shadow:0 0 0px 10px #0003,
-    0 0 0px 20px #0003,
-    0 0 0px 30px #0003;
+    box-shadow:0 0 0px 10px rgba(var(--color-text),.2),
+    0 0 0px 20px rgba(var(--color-text),.2),
+    0 0 0px 30px rgba(var(--color-text),.2);
 
     border-radius:5px;
 
@@ -92,9 +92,9 @@ footer {
 }
 
 footer:hover {
-    box-shadow:0 0 0px 0px #0003,
-    0 0 0px 0px #0003,
-    0 0 0px 0px #0003;
+    box-shadow:0 0 0px 0px rgba(var(--color-text),.2),
+    0 0 0px 0px rgba(var(--color-text),.2),
+    0 0 0px 0px rgba(var(--color-text),.2);
 }
 
 a{
