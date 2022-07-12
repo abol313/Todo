@@ -1,7 +1,9 @@
 @extends('layouts.todo')
 
+@section('class','todo-edit')
+
 @section('content')
-    <h2>Edit the todo !</h2>
+    <h2 class="title">Edit the todo !</h2>
 
     <form action="{!!route('todos.update',['todo'=>$todo])!!}" method="post">
         @csrf
@@ -37,11 +39,13 @@
             </div>
         @enderror
     
-        <label title="the todo had been done ?">Done:</label>
-        <label for="done_yes">Yes</label>
-        <input id="done_yes" name="done" type="radio" value="1" @checked(session('_old_input.done') ? session('_old_input.done')==="1" : $todo->done_at !== null)/>
-        <label for="done_no">No</label>
-        <input id="done_no" name="done" type="radio" value="0" @checked(session('_old_input.done') ? session('_old_input.done')==="0" : $todo->done_at === null)/>
+        <label title="the todo had been done ?">Done</label>
+        <div class="done">
+            <label for="done_yes">Yes</label>
+            <input id="done_yes" name="done" type="radio" value="1" @checked(session('_old_input.done') ? session('_old_input.done')==="1" : $todo->done_at !== null)/>
+            <input id="done_no" name="done" type="radio" value="0" @checked(session('_old_input.done') ? session('_old_input.done')==="0" : $todo->done_at === null)/>
+            <label for="done_no">No</label>
+        </div>
         @error('done')
             <div class="error-input">
                 <h3>{{$message}}</h3>
