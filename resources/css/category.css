@@ -2,9 +2,11 @@
     display:none;
 }
 
-:is(.category-index,.category-show,.category-create,.category-edit) main {
+main {
     flex-grow: 1;
-    
+    max-width:100%;
+    box-sizing: border-box;
+
     display:flex;
     flex-direction:column;
     gap:10px;

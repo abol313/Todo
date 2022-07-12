@@ -6,7 +6,8 @@ aside {
 main {
     flex-grow:10;
     width:400px;
-
+    max-width:100%;
+    box-sizing: border-box;
     display:flex;
     flex-direction:column;
     gap:10px;
@@ -119,7 +120,7 @@ main .todo-item {
 :is(.todo-edit,.todo-create) main form :is(input,textarea,select){
     /* border-radius:5px; */
     box-sizing: border-box;
-    width:100%;
+    width:100vw;
     padding:10px;
     font-size:1.1em;
     background-color:rgba(var(--color-text),.2);
