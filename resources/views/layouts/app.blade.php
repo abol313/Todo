@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <meta property="og:title" content="Todo Collection"/>
+    <meta property="og:description" content="Manage with your tasks more benefits..."/>
+    <meta property="og:url" content="{{route('todos.index')}}"/>
+    <meta property="og:image" content="images/site_banner.png"/>
+
+    <link rel="shortcut icon" href="images/site_logo.png"/>
+
     @vite('resources/css/colors.css')
     @vite('resources/css/dark.css')
     @vite('resources/css/app.css')
     @stack('styles')
     
+    @vite('resources/js/app.js')
     <title>@yield('title','Todo Collection')</title>
 </head>
 <body class="@yield('class','app')">
