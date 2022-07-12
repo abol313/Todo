@@ -12,7 +12,7 @@
     
     <title>@yield('title','Todo Collection')</title>
 </head>
-<body>
+<body class="@yield('class','app')">
     <div class="header-nav">
         <header>
             @section('header')
@@ -36,7 +36,7 @@
         @show
     </aside>
     
-    <main>
+    <main class="custom-scroll">
         @section('content')
             <h3>Welcome ;)}</h3>
         @show
