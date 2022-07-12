@@ -1,5 +1,7 @@
 @extends('layouts.category')
 
+@section('class','category-create')
+
 @section('content')
     <h2>Make a Category !</h2>
     <form action="{!!route('categories.store')!!}" method="post">

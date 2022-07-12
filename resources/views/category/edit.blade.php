@@ -1,5 +1,7 @@
 @extends('layouts.category')
 
+@section('class','category-edit')
+
 @section('content')
     <h2>Edit the category !</h2>
 
