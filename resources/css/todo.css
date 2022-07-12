@@ -93,21 +93,30 @@ main .todo-item {
     max-width:calc(100vw - 0px);
 }
 
-.todo-edit main form {
+:is(.todo-edit,.todo-create) main form {
+    box-sizing: border-box;
+    width:400px;
+    max-width:100%;
+    align-self: center;
     display:flex;
     flex-direction:column;
 }
 
-.todo-edit main form label{
+.todo-create main form input[type="submit"]{
+    margin-top: 10px;
+}
+
+:is(.todo-edit,.todo-create) main form label{
     padding:10px;
     font-size:1.3em;
     margin-top:10px;
     text-align:left;
 }
 
-.todo-edit main form :is(input,textarea,select){
+:is(.todo-edit,.todo-create) main form :is(input,textarea,select){
     /* border-radius:5px; */
-
+    box-sizing: border-box;
+    width:100%;
     padding:10px;
     font-size:1.1em;
     background-color:rgba(var(--color-text),.2);
@@ -119,24 +128,24 @@ main .todo-item {
     caret-color: rgb(var(--color-text));
 }
 
-.todo-edit main form select option{
+:is(.todo-edit,.todo-create) main form select option{
     appearance: none;
     background-color: rgb(var(--color-text-bg));
     color: rgb(var(--color-text));
     outline: none;
 }
 
-.todo-edit main form .done {
+:is(.todo-edit,.todo-create) main form .done {
     
     display:flex;
     align-items:center;
     border-top:1px solid rgb(var(--color-text));
 }
-.todo-edit main form .done *{
+:is(.todo-edit,.todo-create) main form .done *{
     margin:0;
 }
 
-.todo-edit main form input[type="radio"]{
+:is(.todo-edit,.todo-create) main form input[type="radio"]{
     appearance:none;
     width:20px;
     height:20px;
@@ -145,16 +154,20 @@ main .todo-item {
     background-color: rgb(var(--color-text-bg));
 }
 
-.todo-edit main form input[type="radio"]:checked{
+:is(.todo-edit,.todo-create) main form input[type="radio"]:checked{
     background-color: rgb(var(--color-text));
 }
 
-.todo-edit main form :is(input,textarea)::placeholder{
+:is(.todo-edit,.todo-create) main form :is(input,textarea)::placeholder{
     color:rgba(var(--color-text),.6);
 }
 
-.todo-edit main form :is(input[type="submit"],input[type="reset"]){
+:is(.todo-edit,.todo-create) main form :is(input[type="submit"],input[type="reset"]){
     background-color: rgb(var(--color-text));
     color: rgb(var(--color-text-bg));
     border-radius:5px;
+}
+
+:is(.todo-edit,.todo-create) aside{
+    display:none;
 }
