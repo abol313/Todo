@@ -43,7 +43,7 @@
     </main>
 
     <footer>
-        <h1>Made in Iran with interests !<h1>
+        <h1>Made in interests !<h1>
     </footer>
 </body>
 </html>
