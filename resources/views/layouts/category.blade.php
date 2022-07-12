@@ -6,6 +6,7 @@
 
 @section('title','Category Collection')
 
+@section('class','category')
 
 @section('header')
     <h1>Welcome to Category Collection !</h1>

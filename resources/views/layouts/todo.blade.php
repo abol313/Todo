@@ -6,6 +6,7 @@
 
 @section('title','Todo Collection')
 
+@section('class','todo')
 
 @section('header')
     <h1>Welcome to Todo Collection !</h1>
