@@ -19,7 +19,7 @@
     --color-light-yellow:255, 203, 59;
 
     --color-light-pink:#ff79b0;
-    --color-light-pink:255, 203, 59;
+    --color-light-pink:255, 121, 176;
 
     --color-light-orange:#ff602f;
     --color-light-orange:255, 96, 47;
@@ -45,10 +45,10 @@
     --color-dark-yellow:#5e5000;
     --color-dark-yellow:94, 80, 0;
 
-    --color-light-pink:#b3004d;
-    --color-light-pink:255, 203, 59;
+    --color-dark-pink:#b3004d;
+    --color-dark-pink:179, 0, 77;
 
-    --color-light-orange:#a71900;
-    --color-light-orange:167, 25, 0;
+    --color-dark-orange:#a71900;
+    --color-dark-orange:167, 25, 0;
 
 }
