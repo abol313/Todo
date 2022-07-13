@@ -91,6 +91,42 @@ footer {
     transition:all 400ms;
 }
 
+footer .form-theme{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+footer .form-theme > *{
+    flex-grow:1;
+    margin:0;
+    padding:10px;
+    font-size:1.1em;
+    border:none;
+}
+
+footer .form-theme select{
+    box-sizing: border-box;
+    background-color:rgba(var(--color-text),.2);
+    border-top:1px solid rgb(var(--color-text));
+    color:rgb(var(--color-text));
+    outline:none;
+}
+
+footer .form-theme select option{
+    appearance: none;
+    background-color: rgb(var(--color-text-bg));
+    color: rgb(var(--color-text));
+    outline: none;
+}
+
+footer .form-theme :is(input[type="submit"],input[type="reset"]){
+    background-color: rgb(var(--color-text));
+    color: rgb(var(--color-text-bg));
+    border:none;
+}
+
+
 footer:hover {
     box-shadow:0 0 0px 0px rgba(var(--color-text),.2),
     0 0 0px 0px rgba(var(--color-text),.2),
