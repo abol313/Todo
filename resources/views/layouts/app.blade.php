@@ -24,8 +24,14 @@
 
     <link rel="shortcut icon" href="images/site_logo.png"/>
 
+    @php
+        $appThemeBrightness = session('theme.brightness','dark');   
+        $appThemeColor = session('theme.color','green');  
+        $appThemeFile = $appThemeBrightness.'_'.$appThemeColor;  
+    @endphp
     @vite('resources/css/colors.css')
     @vite('resources/css/dark.css')
+    @vite("resources/css/$appThemeFile.css")
     @vite('resources/css/app.css')
     @stack('styles')
     
@@ -63,6 +69,25 @@
     </main>
 
     <footer>
+        <form action="{{route('theme')}}">
+            @php
+                $themeColors = ['cyan','green','grey','orange','pink','yellow'];
+                $themeBrightnesses = ['light','dark'];
+            @endphp
+            <select name="brightness">
+                @foreach($themeBrightnesses as $themeBrightness)
+                    <option value="{{$themeBrightness}}" @selected(session('theme.brightness')==$themeBrightness)>{{$themeBrightness}}</option>
+                @endforeach
+            </select>
+
+            <select name="color">
+                @foreach($themeColors as $themeColor)
+                    <option value="{{$themeColor}}" @selected(session('theme.color')==$themeColor)>{{$themeColor}}</option>
+                @endforeach
+            </select>
+            
+            <input type="submit" value="Draw"/>
+        </form>
         <h1>Made in interests !<h1>
     </footer>
 </body>
