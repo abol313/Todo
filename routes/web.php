@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ThemeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +17,7 @@ use App\Http\Controllers\CategoryController;
 */
 
 Route::redirect('/','/todos');
+Route::get('/theme',[ThemeController::class,'setTheme'])->name('theme');
 Route::get('/todos/filter',[TodoController::class,'filterIndex'])->name('todos.filter');
 Route::resource('todos',TodoController::class);
 Route::resource('categories',CategoryController::class);
