@@ -76,13 +76,13 @@
             @endphp
             <select name="brightness">
                 @foreach($themeBrightnesses as $themeBrightness)
-                    <option value="{{$themeBrightness}}" @selected(session('theme.brightness')==$themeBrightness)>{{$themeBrightness}}</option>
+                    <option value="{{$themeBrightness}}" @selected(session('theme.brightness','dark')==$themeBrightness)>{{$themeBrightness}}</option>
                 @endforeach
             </select>
 
             <select name="color">
                 @foreach($themeColors as $themeColor)
-                    <option value="{{$themeColor}}" @selected(session('theme.color')==$themeColor)>{{$themeColor}}</option>
+                    <option value="{{$themeColor}}" @selected(session('theme.color','green')==$themeColor)>{{$themeColor}}</option>
                 @endforeach
             </select>
             
