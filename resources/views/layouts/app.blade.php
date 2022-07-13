@@ -69,7 +69,7 @@
     </main>
 
     <footer>
-        <form action="{{route('theme')}}">
+        <form class="form-theme" action="{{route('theme')}}">
             @php
                 $themeColors = ['cyan','green','grey','orange','pink','yellow'];
                 $themeBrightnesses = ['light','dark'];
