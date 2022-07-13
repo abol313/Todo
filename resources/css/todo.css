@@ -50,10 +50,10 @@ aside .filter .categories form .category{
     color:rgb(var(--color-text-bg));
     padding:10px;
     border-radius:5px;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
+
 }  
 
 aside .filter .categories form .category input[type="checkbox"]{
@@ -62,12 +62,19 @@ aside .filter .categories form .category input[type="checkbox"]{
     width:20px;
     height:20px;
     border-radius:2px;
-    border:2px solid rgb(var(--color-text-bg));
     cursor:pointer;
 }
 
-aside .filter .categories form .category input[type="checkbox"]:checked{
-    background:rgb(var(--color-text));
+aside .filter .categories form .category input[type="checkbox"]:checked:after{
+    content:'';
+    box-sizing: border-box;
+    display:block;
+    margin-left:5%;
+    margin-top:5%;
+    width:90%;
+    height:90%;
+    background-color:rgb(var(--color-text));
+    clip-path:polygon(15% 50%, 40% 75%, 90% 0%, 90% 25%, 40% 100%, 15% 75%, 15% 50%);
 }
 
 aside .filter .categories form .category label{
