@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta property="og:title" content="Todo Collection"/>
-    <meta property="og:description" content="Manage with your tasks more benefits..."/>
-    <meta property="og:url" content="{{route('todos.index')}}"/>
-    <meta property="og:image" content="images/site_banner.png"/>
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="{{url('/')}}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Todo Collection">
+    <meta property="og:description" content="Manage with your tasks more benefits...">
+    <meta property="og:image" content="{{url('images/site_banner.jpg')}}">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="{{url('/')}}">
+    <meta property="twitter:url" content="{{url('/')}}">
+    <meta name="twitter:title" content="Todo Collection">
+    <meta name="twitter:description" content="Manage with your tasks more benefits...">
+    <meta name="twitter:image" content="{{url('images/site_banner.jpg')}}">
+
+    <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 
     <link rel="shortcut icon" href="images/site_logo.png"/>
 
