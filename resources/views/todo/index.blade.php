@@ -10,7 +10,7 @@
 
 @section('sidebar')
     <div class="filter">
-        <h2>Filter</h2>
+        <h2>Filter Todos</h2>
         <div class="categories">
             <h3>Categories</h3>
             <form action="{{route('todos.filter')}}">
@@ -27,7 +27,7 @@
                     @endforeach
                 </div>
                 <input type="reset" onclick="document.querySelectorAll('.todo-filter-category').forEach(v => v.removeAttribute('checked'))" value="Clear"/>
-                <input type="submit" value="filter"/>
+                <input type="submit" value="Filter"/>
 
             </form>
         </div>

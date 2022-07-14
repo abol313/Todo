@@ -21,13 +21,13 @@
 
     <li>
         <a href="{{route('categories.index')}}">
-            <h2>List</h2>
+            <h2>List Categories</h2>
         </a>
     </li>
 
     <li>
         <a href="{{route('categories.create')}}">
-            <h2>Make</h2>
+            <h2>Make Category</h2>
         </a>
     </li>
 @endsection

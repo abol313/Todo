@@ -9,8 +9,8 @@
         @csrf
         @method('put')
 
-        <label for="name">Name</label>
-        <input id="name" name="name" value="{{old('name') ?? $category->name}}" minlength="3" maxlength="14" placeholder="name" title="pass a name for your category" required/>
+        <label for="name">Category  Name</label>
+        <input id="name" name="name" value="{{old('name') ?? $category->name}}" minlength="3" maxlength="14" placeholder="Give a name to this category" title="pass a name for your category" required/>
         @error('name')
             <div class="error-input">
                 <h3>{{$message}}</h3>
