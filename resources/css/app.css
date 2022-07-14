@@ -25,6 +25,7 @@ body {
 
 .header-nav {
     text-align:center;
+    box-sizing: border-box;
     width:100%;
     flex-grow:1;
     padding:20px;
@@ -54,7 +55,6 @@ nav ul li {
     color:rgb(var(--color-text-bg));
     padding:20px;
     border-radius:5px;
-    min-width:190px;
     flex-grow:1;
 }
 
