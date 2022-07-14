@@ -54,7 +54,8 @@ nav ul li {
     color:rgb(var(--color-text-bg));
     padding:20px;
     border-radius:5px;
-    min-width:120px;
+    min-width:190px;
+    flex-grow:1;
 }
 
 nav ul li:first-child {
