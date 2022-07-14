@@ -86,7 +86,7 @@
                 @endforeach
             </select>
             
-            <input type="submit" value="Draw"/>
+            <input type="submit" value="Draw Theme"/>
         </form>
         <h1>Made in interests !<h1>
     </footer>
