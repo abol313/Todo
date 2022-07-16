@@ -28,6 +28,7 @@ Route::name('auth.')->group(function()
     {
         Route::get('/register',[AuthController::class,'register'])->name('register');
         Route::get('/login',[AuthController::class,'login'])->name('login');
+        Route::get('/logout',[AuthController::class,'logout'])->name('logout');
         Route::post('/signup',[AuthController::class,'signup'])->name('signup');
         Route::post('/signin',[AuthController::class,'signin'])->name('signin');
     }
