@@ -41,6 +41,11 @@
 <body class="@yield('class','app')">
     <div class="header-nav">
         <header>
+            @auth
+                <h1>
+                    Hi {{str(auth()->user()->name)->title()}},
+                </h1>
+            @endauth
             @section('header')
                 <h1>Welcome !</h1>
             @show
@@ -51,6 +56,23 @@
                     <li>
                         <h2>item</h2>
                     </li>
+                @show
+
+                @section('authbar')
+                    @guest
+                        <li>
+                            <a href="{{route('auth.login')}}">
+                                <h2>Auth</h2>
+                            </a>
+                        </li>
+                    @endguest
+                    @auth
+                        <li>
+                            <a href="{{route('auth.logout')}}">
+                                <h2>Log out</h2>
+                            </a>
+                        </li>
+                    @endauth
                 @show
             </ul>    
         </nav>
