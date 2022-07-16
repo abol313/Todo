@@ -89,7 +89,12 @@ class CategoryController extends Controller
 
         $category->save();
 
-        return back();
+        return back()->with('message',
+            [
+                'mode'=>'ok',
+                'content'=>'The category edited successfully ;)',
+            ]
+        );
     }
 
     /**
