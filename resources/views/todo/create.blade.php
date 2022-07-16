@@ -4,13 +4,20 @@
 
 @section('content')
     <h2>Make a todo !</h2>
+
+    @if($msg = session()->pull('message'))
+        <div class="msg msg-{{$msg['mode']}}">
+            <h3>{{$msg['content']}}</h3>
+        </div>
+    @endif
+
     <form action="{!!route('todos.store')!!}" method="post">
         @csrf
 
         <label for="title">Todo Title</label>
         <input id="title" name="title" value="{{old('title')}}" minlength="5" maxlength="100" placeholder="Pass a title to have a bit of info" title="pass a title for your todo" required/>
         @error('title')
-            <div class="error-input">
+            <div class="msg msg-warning msg-input">
                 <h3>{{$message}}</h3>
             </div>
         @enderror
@@ -18,7 +25,7 @@
         <label for="description">Todo Description</label>
         <textarea id="description" name="description" rows="10" maxlength="65535" placeholder="Explain more about your task..." title="get description for more details...">{{@old('description')}}</textarea>
         @error('description')
-            <div class="error-input">
+            <div class="msg msg-warning msg-input">
                 <h3>{{$message}}</h3>
             </div>
         @enderror
@@ -32,7 +39,7 @@
             @endforeach
         </select>
         @error('category')
-            <div class="error-input">
+            <div class="msg msg-warning msg-input">
                 <h3>{{$message}}</h3>
             </div>
         @enderror

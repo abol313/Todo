@@ -17,7 +17,7 @@
         <label for="name">Category Name</label>
         <input id="name" name="name" value="{{old('name')}}" minlength="3" maxlength="14" placeholder="Give a name to this category" title="pass a name for your category" required/>
         @error('name')
-            <div class="error-input">
+            <div class="msg msg-warning msg-input">
                 <h3>{{$message}}</h3>
             </div>
         @enderror
