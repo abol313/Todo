@@ -43,7 +43,12 @@ class CategoryController extends Controller
             'name' => $request->get('name')
         ]);
 
-        return back();
+        return back()->with('message',
+            [
+                'mode'=>'ok',
+                'content'=>'The category created successfully ;)',
+            ]
+        );
     }
 
     /**
