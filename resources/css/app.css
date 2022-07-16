@@ -197,3 +197,35 @@ input:-webkit-autofill {
 input:-webkit-autofill:before {
     content:'auto filled';
 }
+
+.msg {
+    box-sizing:border-box;
+    max-width:100%;
+    flex-grow:0;
+    align-self:center;
+    width:400px;
+    --msg-bg-color:var(--color-text-bg);
+    --msg-text-color:var(--color-text);
+    background-color:rgba(var(--msg-bg-color),.2);
+    border:1px solid rgb(var(--msg-text-color));
+    color:rgb(var(--msg-text-color));
+    padding:10px;
+    border-radius:5px;
+    text-align:center;
+}
+
+.msg-ok {
+    --msg-bg-color:var(--color-ok-bg);
+    --msg-text-color:var(--color-ok-text);
+}
+
+.msg-warning {
+    --msg-bg-color:var(--color-warning-bg);
+    --msg-text-color:var(--color-warning-text);
+}
+
+.msg-danger {
+    --msg-bg-color:var(--color-danger-bg);
+    --msg-text-color:var(--color-danger-text);
+}
+
