@@ -31,6 +31,7 @@
         </a>
     </li>
 @endsection
+@section('authbar','')
 
 @section('sidebar')
 
