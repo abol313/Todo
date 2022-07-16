@@ -51,4 +51,10 @@ class AuthController extends Controller
 
         return redirect()->intended(back()->getTargetUrl());
     }
+
+    //Logout the user
+    public function logout(){
+        Auth::logout();
+        return back();
+    }
 }
