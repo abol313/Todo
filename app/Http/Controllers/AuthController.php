@@ -14,6 +14,10 @@ class AuthController extends Controller
 {
     //
 
+    public function __construct(){
+        $this->middleware('guest')->except('logout');
+    }
+
     //Show the register page to register a new user
     public function register(){
         return view('auth.register');
