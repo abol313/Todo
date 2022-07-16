@@ -22,6 +22,7 @@ export default defineConfig({
             'resources/css/app.css',
             'resources/css/todo.css',
             'resources/css/category.css',
+            'resources/css/auth.css',
             'resources/js/app.js',
         ]),
     ],
