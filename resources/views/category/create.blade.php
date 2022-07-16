@@ -4,6 +4,13 @@
 
 @section('content')
     <h2>Make a Category !</h2>
+
+    @if($msg = session()->pull('message'))
+        <div class="msg msg-{{$msg['mode']}}">
+            <h3>{{$msg['content']}}</h3>
+        </div>
+    @endif
+
     <form action="{!!route('categories.store')!!}" method="post">
         @csrf
 
