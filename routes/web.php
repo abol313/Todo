@@ -21,7 +21,7 @@ Route::redirect('/','/todos');
 Route::get('/theme',[ThemeController::class,'setTheme'])->name('theme');
 Route::get('/todos/filter',[TodoController::class,'filterIndex'])->name('todos.filter');
 Route::resource('todos',TodoController::class);
-Route::resource('categories',CategoryController::class);
+Route::resource('categories',CategoryController::class)->middleware('auth');
 
 //Authentications
 Route::name('auth.')->group(function()
