@@ -39,6 +39,10 @@
     <title>@yield('title','Todo Collection')</title>
 </head>
 <body class="@yield('class','app')">
+    <script>
+        document.getElementById("nav_color").setAttribute('content',`rgb(${getComputedStyle(document.body).getPropertyValue('--color-bg')})`)
+    </script>   
+
     <div class="header-nav">
         <header>
             @auth
