@@ -22,6 +22,8 @@
 
     <!-- Meta Tags Generated via https://www.opengraph.xyz -->
 
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta id="nav_color" name="theme-color" content="green">  
     <link rel="shortcut icon" href="images/site_logo.png"/>
 
     @php
