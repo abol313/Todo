@@ -55,9 +55,12 @@ class AuthController extends Controller
         ],$request->input('remember',false));
     
         if(!$authAttempt)
-            return back()->withErrors(['password'=>__('auth.password')]);
+            return back()
+                ->withErrors(['password'=>__('auth.password')])
+                ->onlyInput('email');
 
         $request->session()->regenerate();
+
 
         return redirect()->intended(back()->getTargetUrl());
     }
