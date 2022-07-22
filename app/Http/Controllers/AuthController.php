@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SigninAuthRequest;
 use App\Http\Requests\SignupAuthRequest;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -30,16 +31,17 @@ class AuthController extends Controller
 
     //Register the new user
     public function signup(SignupAuthRequest $request){
-        Auth::login(
-            User::create(
-                [
-                    'email'=>$request->input('email'),
-                    'name'=>$request->input('name'),
-                    'password'=>Hash::make($request->input('password')),
-                ]
-            )
-        ,$request->input('remember',false));
+        $user = User::create(
+            [
+                'email'=>$request->input('email'),
+                'name'=>$request->input('name'),
+                'password'=>Hash::make($request->input('password')),
+            ]
+        );
+        Auth::login($user, $request->input('remember',false));
         
+        event(new Registered($user));
+
         return redirect()->intended(back()->getTargetUrl());
     }
 
