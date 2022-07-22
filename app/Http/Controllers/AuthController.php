@@ -40,6 +40,8 @@ class AuthController extends Controller
         );
         Auth::login($user, $request->input('remember',false));
         
+        $request->session()->regenerate();
+
         event(new Registered($user));
 
         return redirect()->intended(back()->getTargetUrl());
@@ -54,6 +56,8 @@ class AuthController extends Controller
     
         if(!$authAttempt)
             return back()->withErrors(['password'=>__('auth.password')]);
+
+        $request->session()->regenerate();
 
         return redirect()->intended(back()->getTargetUrl());
     }
