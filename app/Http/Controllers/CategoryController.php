@@ -8,6 +8,13 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
+
+    public function __construct(){
+
+        $this->middleware('password.confirm')->only('destroy');
+        
+    }
+
     /**
      * Display a listing of the resource.
      *
