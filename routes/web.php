@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EmailVerificationController;
+use App\Http\Controllers\PasswordConfirmationController;
 use App\Http\Controllers\ThemeController;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -40,4 +41,10 @@ Route::name('verification.')->prefix('/email')->middleware('auth')->group(functi
     Route::get('/verify',[EmailVerificationController::class,'notice'])->name('notice');
     Route::get('/verify/{id}/{hash}',[EmailVerificationController::class,'verify'])->name('verify')->middleware('signed');
     Route::post('/verification-notification',[EmailVerificationController::class,'send'])->name('send');
+});
+
+//Confirm password
+Route::prefix('/password')->name('password.')->middleware(['auth','verified'])->group(function(){
+    Route::get('/confirm',[PasswordConfirmationController::class,'confirm'])->name('confirm');
+    Route::post('/confirm',[PasswordConfirmationController::class,'verify'])->name('verify')->middleware('throttle:6,1');
 });
