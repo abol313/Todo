@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('users_todos', function (Blueprint $table) {
+            $table->id();
+
+            $table->unsignedBigInteger('user')->nullable();
+            $table->unsignedBigInteger('todo');
+
+            $table->timestamps();
+
+            $table->foreign('user')->references('id')->on('users')->casacdeOnDelete();
+            $table->foreign('todo')->references('id')->on('todos')->cascadeOnDelete();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('users_todos');
+    }
+};
