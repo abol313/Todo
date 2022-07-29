@@ -3,9 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
@@ -41,4 +43,14 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getTodos(){
+        return Todo::findMany(UserTodo::where('user',$this->id)->get(['todo'])->pluck('todo')->toArray());
+    }
+
+    public function hasTodo($todo){
+        if($todo instanceof Todo)
+            $todo = $todo->id;
+        return UserTodo::where('user',$this->id)->where('todo',$todo)->get(['todo'])->isNotEmpty() ? Todo::find($todo) : false;
+    }
 }
