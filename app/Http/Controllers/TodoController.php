@@ -7,7 +7,10 @@ use App\Http\Requests\StoreTodoRequest;
 use App\Http\Requests\UpdateTodoRequest;
 use App\Models\Category;
 use App\Models\Todo;
+use App\Models\UserTodo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class TodoController extends Controller
 {
@@ -51,11 +54,19 @@ class TodoController extends Controller
     public function store(StoreTodoRequest $request)
     {
         //
-        Todo::create([
+        $todo = Todo::create([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
             'category' => $request->get('category'),
         ]);
+        
+        UserTodo::create(
+            [
+            'user' => Auth::id(),
+            'todo' => $todo->id,
+            ]
+        );
+
 
         return back()->with('message',
             [
@@ -123,6 +134,9 @@ class TodoController extends Controller
     public function destroy(Todo $todo)
     {
         //
+        if(Auth::check() || $todo->hasUser(Auth::id()))
+            Gate::authorize('destroy-todo',$todo);
+        
         $todo->delete();
 
         return redirect()->route('todos.index');
