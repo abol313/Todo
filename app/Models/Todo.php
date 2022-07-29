@@ -9,4 +9,10 @@ class Todo extends Model
 {
     use HasFactory;
     protected $fillable = ['title','description','category','done_at'];
+
+    public function hasUser($user){
+        if($user instanceof User)
+            $user = $user->id;
+        return UserTodo::where('todo',$this->id)->get(['user'])->isNotEmpty() ? User::find($user) : false;
+    }
 }
