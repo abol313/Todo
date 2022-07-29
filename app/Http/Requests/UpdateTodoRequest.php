@@ -2,7 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Todo;
+use App\Models\UserTodo;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 class UpdateTodoRequest extends FormRequest
 {
@@ -13,7 +17,10 @@ class UpdateTodoRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        $todo = $this->route('todo');
+        return Auth::check() || $todo->hasUser(Auth::id())
+            ? Gate::allows('update-todo', $todo)
+            : true ;
     }
 
     /**
