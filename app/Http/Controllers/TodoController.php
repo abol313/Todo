@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Gate;
 
 class TodoController extends Controller
 {
+
+    public function __construct(){
+        $this->authorizeResource(Todo::class,'todo');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -134,8 +140,8 @@ class TodoController extends Controller
     public function destroy(Todo $todo)
     {
         //
-        if(Auth::check() || $todo->hasUser(Auth::id()))
-            Gate::authorize('destroy-todo',$todo);
+        // if(Auth::check() || $todo->hasUser(Auth::id()))
+        //     Gate::authorize('destroy-todo',$todo);
         
         $todo->delete();
 
