@@ -95,7 +95,9 @@ aside .filter .categories form :is(input[type="submit"],input[type="reset"]){
 }
 
 main .todo-item {
+    text-align:left;
     box-sizing: border-box;
+    position:relative;
     border:2px solid rgb(var(--color-text));
     padding:20px;
     border-radius:5px;
@@ -103,6 +105,44 @@ main .todo-item {
     word-break: keep-all;
     max-width:calc(100vw - 0px);
 }
+
+main .todo-item-checked {
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+main .todo-item-checked:before{
+    float: right;
+    content: 'done';
+    display:block;
+    position: absolute;
+    box-sizing: border-box;
+
+    top:-10px;
+    left:20px;
+
+    width:30px;
+    height:30px;
+    background-color: rgb(var(--color-text));
+    clip-path:polygon(15% 50%, 40% 75%, 90% 0%, 90% 25%, 40% 100%, 15% 75%, 15% 50%);
+    z-index:3;
+
+}
+main .todo-item-checked:after{
+    float: right;
+    content: '';
+    display:block;
+    position: absolute;
+    box-sizing: border-box;
+
+    top:-10px;
+    left:35px;
+    width:15px;
+    height:30px;
+    background-color: rgb(var(--color-text-bg));
+    /* clip-path:polygon(15% 50%, 40% 75%, 90% 0%, 90% 25%, 40% 100%, 15% 75%, 15% 50%); */
+}
+
 
 :is(.todo-edit,.todo-create) main form {
     box-sizing: border-box;
