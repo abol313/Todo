@@ -13,6 +13,6 @@ class Todo extends Model
     public function hasUser($user){
         if($user instanceof User)
             $user = $user->id;
-        return UserTodo::where('todo',$this->id)->get(['user'])->isNotEmpty() ? User::find($user) : false;
+        return UserTodo::where('todo',$this->id)->where('user',$user)->get(['user'])->isNotEmpty() ? User::find($user) : false;
     }
 }
