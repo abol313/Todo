@@ -71,8 +71,7 @@ class TodoPolicy
     public function delete(?User $user, Todo $todo)
     {
         //
-        if( $user === null ) return !$todo->hasUser(null);
-    
+        
         return ( $todo->hasUser(null)===null ?: !!$user?->hasTodo($todo) )  
         && now()->getTimestamp() - $todo->getAttribute($todo->getCreatedAtColumn())->timestamp > 10;
 
