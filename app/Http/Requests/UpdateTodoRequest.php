@@ -17,10 +17,7 @@ class UpdateTodoRequest extends FormRequest
      */
     public function authorize()
     {
-        $todo = $this->route('todo');
-        return Auth::check() || $todo->hasUser(Auth::id())
-            ? Gate::allows('update-todo', $todo)
-            : true ;
+        return true;
     }
 
     /**
