@@ -6,7 +6,9 @@ use App\Http\Controllers\TodoController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EmailVerificationController;
 use App\Http\Controllers\PasswordConfirmationController;
+use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\ThemeController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
@@ -47,4 +49,15 @@ Route::name('verification.')->prefix('/email')->middleware('auth')->group(functi
 Route::prefix('/password')->name('password.')->middleware(['auth','verified'])->group(function(){
     Route::get('/confirm',[PasswordConfirmationController::class,'confirm'])->name('confirm');
     Route::post('/confirm',[PasswordConfirmationController::class,'verify'])->name('verify')->middleware('throttle:6,1');
+});
+
+//Reset password
+Route::name('password.')->middleware('guest')->group(function(){
+    //Send password reset link
+    Route::get('/forgot-password',[PasswordResetController::class,'request'])->name('request');
+    Route::post('/forgot-password',[PasswordResetController::class,'email'])->name('email');
+
+    //Reset password
+    Route::get('/reset-password/{token}',[PasswordResetController::class,'reset'])->name('reset');
+    Route::post('/reset-password',[PasswordResetController::class,'update'])->name('update');
 });
