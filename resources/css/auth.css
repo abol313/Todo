@@ -62,3 +62,9 @@ main {
     margin-top:10px;
 }
 
+.auth-login .forgot-password-container {
+    padding:10px;
+    gap:10px;
+    display:flex;
+    flex-wrap:wrap;
+}
