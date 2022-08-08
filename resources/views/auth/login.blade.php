@@ -34,7 +34,21 @@
             </div>
         @enderror
 
+        
+
         <input type="submit" value="Login !"/>
 
+        <div class="forgot-password-container">
+            <h3>
+                Forgot password ?
+            </h3>
+            <h4>
+                <a href="{{route('password.request')}}">
+                    <ins>change your password</ins>
+                </a>
+            </h4>
+        </div>    
+        
     </form>
+
 @endsection
